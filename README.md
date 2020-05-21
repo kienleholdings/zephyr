@@ -1,2 +1,3 @@
-# zephyr
-Kienle Holdings Design System Monorepo
+# Zephyr Design System
+
+> Kienle Holdings Design System Monorepo
