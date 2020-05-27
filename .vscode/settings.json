@@ -1,0 +1,6 @@
+{
+  "eslint.validate": ["javascript", "typescript"],
+  "eslint.workingDirectories": [
+    { "directory": "./packages/zephyr-tailwind", "changeProcessCWD": true }
+  ]
+}

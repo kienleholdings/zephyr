@@ -1,0 +1,36 @@
+{
+  "name": "@kienleholdings/zephyr",
+  "version": "0.1.0",
+  "description": "Kienle Holdings Design System Monorepo",
+  "prettier": "@kienleholdings/prettier-config",
+  "private": true,
+  "scripts": {
+    "build": "lerna exec --parallel yarn build",
+    "typecheck": "lerna exec --parallel yarn build",
+    "lint": "lerna exec --parallel -- yarn lint",
+    "test": "lerna exec --parallel -- yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kienleholdings/zephyr.git"
+  },
+  "keywords": [
+    "kienle holdings",
+    "zephyr"
+  ],
+  "author": "Kienle Holdings LLC <hello@kienle.tech> (https://www.kienle.dev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kienleholdings/zephyr/issues"
+  },
+  "homepage": "https://github.com/kienleholdings/zephyr#readme",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@kienleholdings/prettier-config": "^0.1.1",
+    "lerna": "^3.21.0",
+    "markdownlint-cli": "^0.23.1",
+    "prettier": "^2.0.5"
+  }
+}
