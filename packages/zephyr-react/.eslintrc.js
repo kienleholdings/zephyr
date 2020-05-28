@@ -11,5 +11,13 @@ module.exports = {
         jsx: 'never',
       },
     ],
+    // This is a bit dangerous but needs to happen so we're not disabling errors for peer deps every single file
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+        peerDependencies: true,
+      },
+    ],
   },
 };

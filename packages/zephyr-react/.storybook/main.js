@@ -1,7 +1,15 @@
-const custom = require('../webpack.config.storybook.js');
+const path = require('path');
 
 module.exports = {
-  webpackFinal: (config) => {
-    return { ...config, module: { ...config.module, rules: custom.module.rules } };
+  stories: ['../src/**/*.stories.tsx'],
+  webpackFinal: async (config) => {
+    config.module.rules.push({
+      loader: 'awesome-typescript-loader',
+      options: {
+        transpileOnly: true,
+      },
+      test: /\.tsx?$/,
+    });
+    return config;
   },
 };

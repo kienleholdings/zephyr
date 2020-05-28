@@ -6,6 +6,7 @@
   "private": false,
   "main": "./lib/index.js",
   "scripts": {
+    "start": "start-storybook -p 3000",
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .ts --ext .tsx",
