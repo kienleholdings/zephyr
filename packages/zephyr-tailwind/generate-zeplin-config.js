@@ -5,4 +5,4 @@
 const fs = require('fs');
 const transpilledConfig = require('./lib/tailwind').default;
 
-fs.writeFileSync('./lib/zeplin-config.json', JSON.stringify(transpilledConfig, null, 1));
+fs.writeFileSync('./lib/zeplin-config.json', JSON.stringify(transpilledConfig));
