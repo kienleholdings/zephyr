@@ -16,11 +16,11 @@ interface Props {
 
 export const generateButtonClassNames = (theme: Props['theme']): string => {
   const commonStyles =
-    'py-16 px-48 rounded-partial shadow-1 hover:shadow-2 active:shadow-0 transition duration-75 h-48 font-body text-body leading-body';
+    'py-16 px-48 rounded-partial shadow-1 hover:shadow-2 active:shadow-0 transition duration-75 h-56 font-body text-body leading-body';
   let themeStyles = '';
   if (theme === 'primary') {
     themeStyles =
-      'bg-charcoal-normal active:bg-charcoal-dark hover:bg-charcoal-light text-steam-normal';
+      'bg-charcoal-normal border-charcoal-normal active:bg-charcoal-dark hover:bg-charcoal-light text-steam-normal';
   } else if (theme === 'secondary') {
     themeStyles =
       'border border-ash-normal bg-steam-normal active:bg-ash-normal text-charcoal-normal hover:text-charcoal-light active:text-charcoal-dark';
