@@ -34,6 +34,8 @@
     "@kienleholdings/prettier-config": "^0.1.1",
     "@kienleholdings/zephyr-tailwind": "*",
     "@storybook/react": "^5.3.19",
+    "@types/classnames": "^2.2.10",
+    "@types/lodash": "^4.14.154",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.0",
     "css-loader": "^3.5.3",
@@ -48,6 +50,8 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.15",
     "tailwindcss": "^1.4.6"
   },
   "peerDependencies": {
