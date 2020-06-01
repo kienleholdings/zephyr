@@ -12,7 +12,11 @@ const tailwindConfig = {
     },
     colors: {
       ash: {
+        dark: '#acacac',
         normal: '#ededed',
+      },
+      danger: {
+        normal: '#f44336',
       },
       charcoal: {
         dark: '#222222',
