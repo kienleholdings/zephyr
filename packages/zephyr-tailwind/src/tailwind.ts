@@ -65,6 +65,13 @@ const tailwindConfig = {
       '88': '88px',
       '96': '96px',
     },
+    extend: {
+      maxWidth: {
+        'container-fluid': '100vw',
+        'container-general': '1200px',
+        'container-long-form': '600px',
+      },
+    },
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
