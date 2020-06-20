@@ -10,37 +10,54 @@ import _noop from 'lodash/noop';
 interface Props {
   className?: string;
   onClick?: () => void;
+  size?: 'normal' | 'small';
   theme: 'primary' | 'secondary';
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
 }
 
-export const generateButtonClassNames = (theme: Props['theme']): string => {
+export const generateButtonClassNames = (size: Props['size'], theme: Props['theme']): string => {
   const commonStyles =
-    'py-16 px-48 rounded-partial shadow-1 hover:shadow-2 active:shadow-0 transition duration-75 h-56 font-body text-body leading-body';
-  let themeStyles = '';
-  if (theme === 'primary') {
-    themeStyles =
-      'bg-charcoal-normal border-charcoal-normal active:bg-charcoal-dark hover:bg-charcoal-light text-steam-normal';
-  } else if (theme === 'secondary') {
-    themeStyles =
-      'border border-ash-normal bg-steam-normal active:bg-ash-normal text-charcoal-normal hover:text-charcoal-light active:text-charcoal-dark';
-  } else {
-    // If a developer is using something besides typescript, they might try to use an invalid theme
-    // eslint-disable-next-line no-console
-    console.error(`Zephyr Error: Unknown button theme ${theme}`);
+    'rounded-partial shadow-1 hover:shadow-2 active:shadow-0 transition duration-75 font-body text-body leading-body';
+  let sizeStyles = '';
+  switch (size) {
+    case 'normal':
+      sizeStyles = 'h-56 py-16 px-48';
+      break;
+    case 'small':
+      sizeStyles = 'h-40 py-8 px-24';
+      break;
+    default:
+      // eslint-disable-next-line no-console
+      console.error(`Zephyr Error: Unknown button size ${size}`);
   }
-  return classNames(commonStyles, themeStyles);
+
+  let themeStyles = '';
+  switch (theme) {
+    case 'primary':
+      themeStyles =
+        'bg-charcoal-normal active:bg-charcoal-dark hover:bg-charcoal-light text-steam-normal';
+      break;
+    case 'secondary':
+      themeStyles =
+        'bg-steam-normal active:bg-ash-normal text-charcoal-normal hover:text-charcoal-light active:text-charcoal-dark';
+      break;
+    default:
+      // eslint-disable-next-line no-console
+      console.error(`Zephyr Error: Unknown button theme ${theme}`);
+  }
+  return classNames(commonStyles, sizeStyles, themeStyles);
 };
 
 const Button: React.FC<Props> = ({
   children,
   className,
   onClick = _noop,
+  size = 'normal',
   theme,
   type = 'button',
 }) => (
   <button
-    className={classNames(generateButtonClassNames(theme), className)}
+    className={classNames(generateButtonClassNames(size, theme), className)}
     onClick={onClick}
     type={type}
   >
