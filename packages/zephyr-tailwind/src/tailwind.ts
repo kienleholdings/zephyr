@@ -20,7 +20,7 @@ const tailwindConfig = {
       danger: {
         normal: '#f44336',
       },
-      charcoal: {
+      primary: {
         dark: '#222222',
         light: '#555555',
         normal: '#333333',

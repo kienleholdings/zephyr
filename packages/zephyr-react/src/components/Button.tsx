@@ -35,11 +35,11 @@ export const generateButtonClassNames = (size: Props['size'], theme: Props['them
   switch (theme) {
     case 'primary':
       themeStyles =
-        'bg-charcoal-normal active:bg-charcoal-dark hover:bg-charcoal-light text-steam-normal';
+        'bg-primary-normal active:bg-primary-dark hover:bg-primary-light text-steam-normal';
       break;
     case 'secondary':
       themeStyles =
-        'bg-steam-normal active:bg-ash-normal text-charcoal-normal hover:text-charcoal-light active:text-charcoal-dark';
+        'bg-steam-normal active:bg-ash-normal text-primary-normal hover:text-primary-light active:text-primary-dark';
       break;
     default:
       // eslint-disable-next-line no-console

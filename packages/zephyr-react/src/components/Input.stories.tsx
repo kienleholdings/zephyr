@@ -2,34 +2,39 @@ import React from 'react';
 import _noop from 'lodash/noop';
 
 import Button from './Button';
+import Container from './Container';
 import Input from './Input';
 
 const testValidator = (text: string): boolean => text.length > 0;
 
 export const text = (): React.ReactElement => (
-  <Input
-    label="Text Input"
-    name="test"
-    onChange={_noop}
-    placeholder="I'm a placeholder"
-    type="text"
-  />
+  <Container size="long-form">
+    <Input
+      label="Text Input"
+      name="test"
+      onChange={_noop}
+      placeholder="I'm a placeholder"
+      type="text"
+    />
+  </Container>
 );
 
 export const textWithErrorHandling = (): React.ReactElement => (
-  <Input
-    errorMessage="This field is required"
-    label="Text Input"
-    name="test"
-    onChange={_noop}
-    placeholder="I'm a placeholder"
-    type="text"
-    validator={testValidator}
-  />
+  <Container size="long-form">
+    <Input
+      errorMessage="This field is required"
+      label="Text Input"
+      name="test"
+      onChange={_noop}
+      placeholder="I'm a placeholder"
+      type="text"
+      validator={testValidator}
+    />
+  </Container>
 );
 
 export const realWorldExample = (): React.ReactElement => (
-  <>
+  <Container size="long-form">
     <Input
       errorMessage="This field is required"
       label="First Name"
@@ -49,7 +54,7 @@ export const realWorldExample = (): React.ReactElement => (
       validator={testValidator}
     />
     <Button theme="primary">Submit</Button>
-  </>
+  </Container>
 );
 
 export default { title: 'Input' };
