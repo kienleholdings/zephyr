@@ -1,4 +1,9 @@
+import tailwindSpinner from 'tailwindcss-spinner';
+
 const tailwindConfig = {
+  plugins: [
+    tailwindSpinner(), // no options to configure
+  ],
   theme: {
     borderRadius: {
       none: '0',
@@ -67,6 +72,21 @@ const tailwindConfig = {
       '88': '88px',
       '96': '96px',
     },
+    // Todo: This should probably be better typed but not a big enough priority that I care
+    spinner: (theme: any): any => ({
+      normal: {
+        color: theme('colors.primary.normal'),
+        size: '64px', // size of the spinner (used for both width and height)
+        border: '8px', // border-width of the spinner (shouldn't be bigger than half the spinner's size)
+        speed: '1000ms',
+      },
+      small: {
+        color: theme('colors.primary.normal'),
+        size: '32px', // size of the spinner (used for both width and height)
+        border: '4px', // border-width of the spinner (shouldn't be bigger than half the spinner's size)
+        speed: '1000ms',
+      },
+    }),
     extend: {
       maxWidth: {
         'container-fluid': '100vw',

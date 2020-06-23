@@ -1,0 +1,5 @@
+src
+*.map
+.eslintignore
+.eslintrc.js
+tsconfig.json
