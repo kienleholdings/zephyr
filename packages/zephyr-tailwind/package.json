@@ -33,10 +33,13 @@
     "@kienleholdings/prettier-config": "^0.1.1",
     "eslint": "^7.2.0",
     "prettier": "^2.0.5",
+    "tailwindcss": "^1.4.6",
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "tailwindcss": "^1.4.6",
     "tailwindcss-spinner": "^1.0.0"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^1.4.6"
   }
 }

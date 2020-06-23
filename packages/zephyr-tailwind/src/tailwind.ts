@@ -1,5 +1,13 @@
 import tailwindSpinner from 'tailwindcss-spinner';
 
+// TODO: Come up with a better variable system post 0.X
+// Re-used styles go up here
+const charcoal = {
+  dark: '#222222',
+  light: '#555555',
+  normal: '#333333',
+};
+
 const tailwindConfig = {
   plugins: [
     tailwindSpinner(), // no options to configure
@@ -25,11 +33,8 @@ const tailwindConfig = {
       danger: {
         normal: '#f44336',
       },
-      primary: {
-        dark: '#222222',
-        light: '#555555',
-        normal: '#333333',
-      },
+      charcoal,
+      primary: charcoal,
       steam: {
         normal: '#ffffff',
       },
