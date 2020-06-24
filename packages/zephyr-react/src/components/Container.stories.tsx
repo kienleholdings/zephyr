@@ -1,12 +1,11 @@
 import React from 'react';
 import Container from './Container';
+import utilities from '../utilities';
 
 const loremIpsum = (
   <>
-    <h1 className="font-bold font-display leading-heading-extra-large mb-16 text-heading-extra-large">
-      Lorem Ipsum
-    </h1>
-    <p className="font-normal font-body leading-body mb-16 text-body">
+    <h1 className={utilities.generateTextStyles('heading-extra-large')}>Lorem Ipsum</h1>
+    <p className={utilities.generateTextStyles('paragraph')}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper dolor sed
       malesuada rutrum. Praesent sed finibus felis. Mauris et purus nunc. Nunc placerat cursus orci
       eu bibendum. Vivamus sed turpis imperdiet, maximus tellus non, vehicula metus. Ut vestibulum
@@ -18,7 +17,7 @@ const loremIpsum = (
       rhoncus, lectus est commodo nibh, interdum fermentum tellus erat quis eros. Vestibulum sed
       sollicitudin orci, eget condimentum ex.
     </p>
-    <p className="font-normal font-body leading-body mb-16 text-body">
+    <p className={utilities.generateTextStyles('paragraph')}>
       Nam vestibulum lorem enim, dapibus tristique turpis malesuada et. Suspendisse eu finibus nibh.
       Donec facilisis, quam et consequat pellentesque, dui enim ultrices massa, eu blandit est justo
       at urna. Vivamus sit amet semper nulla. Ut sed mauris dapibus, sodales justo in, pulvinar

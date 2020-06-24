@@ -8,5 +8,18 @@ import Container from './components/Container';
 import Grid from './components/Grid';
 import Input from './components/Input';
 import Loader from './components/Loader';
+import utilities from './utilities';
 
-export { Button, Card, CardBody, CardHeader, CardImage, Column, Container, Grid, Input, Loader };
+export {
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  CardImage,
+  Column,
+  Container,
+  Grid,
+  Input,
+  Loader,
+  utilities,
+};

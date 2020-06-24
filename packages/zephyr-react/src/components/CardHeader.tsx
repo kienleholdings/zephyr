@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import utilities from '../utilities';
 
 interface Props {
   className?: string;
@@ -8,7 +9,8 @@ interface Props {
 const CardHeader: React.FC<Props> = ({ children, className }) => (
   <div
     className={classNames(
-      'border-ash-normal border-b font-display font-body h-72 p-24  leading-body text-body',
+      'border-ash-normal border-b h-72 p-24',
+      utilities.generateTextStyles('heading-small', 'light'),
       className
     )}
   >

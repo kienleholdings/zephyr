@@ -6,6 +6,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import _noop from 'lodash/noop';
+import utilities from '../utilities';
 
 interface Props {
   className?: string;
@@ -14,39 +15,6 @@ interface Props {
   theme: 'primary' | 'secondary';
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
 }
-
-export const generateButtonClassNames = (size: Props['size'], theme: Props['theme']): string => {
-  const commonStyles =
-    'rounded-partial shadow-1 hover:shadow-2 active:shadow-0 transition duration-75 font-body text-body leading-body';
-  let sizeStyles = '';
-  switch (size) {
-    case 'normal':
-      sizeStyles = 'h-56 py-16 px-48';
-      break;
-    case 'small':
-      sizeStyles = 'h-40 py-8 px-24';
-      break;
-    default:
-      // eslint-disable-next-line no-console
-      console.error(`Zephyr Error: Unknown button size ${size}`);
-  }
-
-  let themeStyles = '';
-  switch (theme) {
-    case 'primary':
-      themeStyles =
-        'bg-primary-normal active:bg-primary-dark hover:bg-primary-light text-steam-normal';
-      break;
-    case 'secondary':
-      themeStyles =
-        'bg-steam-normal active:bg-ash-normal text-primary-normal hover:text-primary-light active:text-primary-dark';
-      break;
-    default:
-      // eslint-disable-next-line no-console
-      console.error(`Zephyr Error: Unknown button theme ${theme}`);
-  }
-  return classNames(commonStyles, sizeStyles, themeStyles);
-};
 
 const Button: React.FC<Props> = ({
   children,
@@ -57,7 +25,7 @@ const Button: React.FC<Props> = ({
   type = 'button',
 }) => (
   <button
-    className={classNames(generateButtonClassNames(size, theme), className)}
+    className={classNames(utilities.generateButtonStyles(size, theme), className)}
     onClick={onClick}
     type={type}
   >
