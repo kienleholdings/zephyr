@@ -7,7 +7,7 @@
 1. Run `yarn add tailwindcss` (if you get peer dep errors, explicitly append the version `@^1.4.6`)
 1. Run `yarn add @kienleholdings/zephyr-tailwind`
 
-## Usage
+## Setup
 
 1. Create a file named `tailwind.config.js`
 1. Add the following
@@ -19,6 +19,11 @@ module.exports = {
   ...zephyrTailwind.default,
 };
 ```
+
+From there, we recommend taking a look at the
+[TailwindCSS Documentation](https://tailwindcss.com/docs/installation), as they go into a lot more
+depth about different CSS preprocessors and bundlers than we'd like to. Our preferred method is to
+use PostCSS with Webpack, but really anything works if you put your mind to it!
 
 ## Usage with PostCSS
 
@@ -51,8 +56,8 @@ body {
 @import 'tailwindcss/utilities';
 ```
 
-Assuming you're using a bundler like webpack, all you need to do from there is add
-`import ./zephyr.css` to your application root and you're good to go!
+All you need to do from there is add `import ./zephyr.css` to your application root and you're good
+to go!
 
 ## Customization
 
