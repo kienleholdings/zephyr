@@ -5,9 +5,10 @@
   "prettier": "@kienleholdings/prettier-config",
   "private": false,
   "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "start": "start-storybook -p 3000",
-    "build": "tsc",
+    "build": "tsc --declaration",
     "lint": "eslint . --ext .ts --ext .tsx",
     "test": "echo \"Todo: Configure Jest and Storybook\"",
     "prepublishOnly": "npm run lint && npm run test && npm run build"
@@ -32,7 +33,7 @@
     "@kienleholdings/base-tsconfig": "^0.1.5",
     "@kienleholdings/eslint-config-react": "^0.1.3",
     "@kienleholdings/prettier-config": "^0.1.1",
-    "@kienleholdings/zephyr-tailwind": "*",
+    "@kienleholdings/zephyr-tailwind": "^0.1.0",
     "@storybook/react": "^5.3.19",
     "@types/classnames": "^2.2.10",
     "@types/lodash": "^4.14.156",
@@ -55,6 +56,6 @@
     "lodash": "^4.17.15"
   },
   "peerDependencies": {
-    "@kienleholdings/zephyr-tailwind": "*"
+    "@kienleholdings/zephyr-tailwind": "^0.1.0"
   }
 }
