@@ -59,7 +59,7 @@ const generateTextStyles = (
 };
 
 const generateAlertStyles = (theme: 'error' | 'success'): string => {
-  const COMMON_ALERT_STYLES = 'px-16 py-16 rounded-partial shadow-1';
+  const COMMON_ALERT_STYLES = 'px-24 py-16 rounded-partial shadow-1';
   let styles = '';
   switch (theme) {
     case 'error':
