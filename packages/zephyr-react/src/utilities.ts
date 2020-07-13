@@ -58,6 +58,20 @@ const generateTextStyles = (
   return classNames(textStyle, textTheme);
 };
 
+const generateAlertStyles = (theme: 'error' | 'success'): string => {
+  const COMMON_ALERT_STYLES = 'px-16 py-16 rounded-partial shadow-1';
+  let styles = '';
+  switch (theme) {
+    case 'error':
+      styles = `${generateTextStyles('body', 'dark')} bg-danger-normal `;
+      break;
+    default:
+      // eslint-disable-next-line no-console
+      console.error(`Zephyr Error: Unknown alert theme ${theme}`);
+  }
+  return classNames(COMMON_ALERT_STYLES, styles);
+};
+
 // Why export button styles as a utility? Good question! This allows us to create "buttons" on
 // non-button elements such as React Router <Link> elements while keeping consistent styles
 const generateButtonStyles = (size: 'normal' | 'small', theme: 'primary' | 'secondary'): string => {
@@ -97,6 +111,7 @@ const generateButtonStyles = (size: 'normal' | 'small', theme: 'primary' | 'seco
 };
 
 const utilities = {
+  generateAlertStyles,
   generateButtonStyles,
   generateTextStyles,
 };

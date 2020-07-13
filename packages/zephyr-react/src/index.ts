@@ -1,3 +1,4 @@
+import Alert from './components/Alert';
 import Button from './components/Button';
 import Card from './components/Card';
 import CardBody from './components/CardBody';
@@ -11,6 +12,7 @@ import Loader from './components/Loader';
 import utilities from './utilities';
 
 export {
+  Alert,
   Button,
   Card,
   CardBody,
