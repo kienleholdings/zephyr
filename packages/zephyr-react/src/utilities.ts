@@ -61,7 +61,7 @@ const generateTextStyles = (
       console.error(`Zephyr Error: Unknown text theme ${theme}`);
   }
 
-  return classNames(textStyle, textTheme, { [COMMON_MARGIN]: includeMargin });
+  return classNames(textStyle, textTheme, { [COMMON_MARGIN]: includeMargin && style !== 'body' });
 };
 
 const generateAlertStyles = (theme: 'error' | 'success'): string => {
