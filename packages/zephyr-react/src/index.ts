@@ -7,8 +7,10 @@ import CardImage from './components/CardImage';
 import Column from './components/Column';
 import Container from './components/Container';
 import Grid from './components/Grid';
+import Icon from './components/Icon';
 import Input from './components/Input';
 import Loader from './components/Loader';
+import Modal from './components/Modal';
 import utilities from './utilities';
 
 export {
@@ -21,7 +23,9 @@ export {
   Column,
   Container,
   Grid,
+  Icon,
   Input,
   Loader,
+  Modal,
   utilities,
 };

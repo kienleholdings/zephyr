@@ -8,11 +8,14 @@ const generateTextStyles = (
     | 'heading-large'
     | 'heading-medium'
     | 'heading-small'
+    | 'link'
     | 'paragraph',
-  theme: 'light' | 'dark' = 'light'
+  theme: 'light' | 'dark' = 'light',
+  includeMargin = true
 ): string => {
   const COMMON_BODY = 'font-normal font-body leading-body text-body';
-  const COMMON_HEAD = 'font-bold font-display mb-16';
+  const COMMON_HEAD = 'font-bold font-display';
+  const COMMON_MARGIN = 'mb-16';
   let textStyle = '';
   let textTheme = '';
   switch (style) {
@@ -35,8 +38,11 @@ const generateTextStyles = (
     case 'heading-small':
       textStyle = `${COMMON_HEAD} leading-heading-small text-heading-small`;
       break;
+    case 'link':
+      textStyle = `${COMMON_BODY} underline hover:text-charcoal-light`;
+      break;
     case 'paragraph':
-      textStyle = `${COMMON_BODY} mb-16`;
+      textStyle = `${COMMON_BODY} ${COMMON_MARGIN}`;
       break;
     default:
       // eslint-disable-next-line no-console
@@ -55,7 +61,7 @@ const generateTextStyles = (
       console.error(`Zephyr Error: Unknown text theme ${theme}`);
   }
 
-  return classNames(textStyle, textTheme);
+  return classNames(textStyle, textTheme, { COMMON_MARGIN: includeMargin });
 };
 
 const generateAlertStyles = (theme: 'error' | 'success'): string => {
