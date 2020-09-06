@@ -22,10 +22,10 @@ const generateColumnSize = (a: Props['a'], d: Props['d'], t: Props['t'], m: Prop
     desktopStyle = `lg:w-${d}/12`;
   }
   if (m) {
-    mobileStyle = `w-${m}/6`;
+    mobileStyle = `w-${m}/4`;
   }
   if (t) {
-    tabletStyle = `md:w-${t}/4`;
+    tabletStyle = `md:w-${t}/6`;
   }
 
   return classNames(anyStyle, desktopStyle, mobileStyle, tabletStyle);
