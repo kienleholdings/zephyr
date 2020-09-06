@@ -10,7 +10,7 @@ const CardHeader: React.FC<Props> = ({ children, className }) => (
   <div
     className={classNames(
       'border-ash-normal border-b h-72 p-24',
-      utilities.generateTextStyles('heading-small', 'light'),
+      utilities.generateTextStyles('heading-small', 'light', false),
       className
     )}
   >
