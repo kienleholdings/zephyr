@@ -28,7 +28,7 @@ const generateColumnSize = (a: Props['a'], d: Props['d'], t: Props['t'], m: Prop
     tabletStyle = `md:w-${t}/4`;
   }
 
-  return classNames(desktopStyle, mobileStyle, tabletStyle);
+  return classNames(anyStyle, desktopStyle, mobileStyle, tabletStyle);
 };
 
 const Column: React.FC<Props> = ({ children, className, a, d, m, noGutter, t }) => (
