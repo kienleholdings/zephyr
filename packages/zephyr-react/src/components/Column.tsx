@@ -2,32 +2,42 @@ import React from 'react';
 import classNames from 'classnames';
 
 interface Props {
-  className?: string;
+  a?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
   d?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
   m?: '1' | '2' | '3' | '4';
-  noGutter?: boolean;
   t?: '1' | '2' | '3' | '4' | '5' | '6';
+  className?: string;
+  noGutter?: boolean;
 }
 
-const generateColumnSize = (d: Props['d'], t: Props['t'], m: Props['m']): string => {
+const generateColumnSize = (a: Props['a'], d: Props['d'], t: Props['t'], m: Props['m']): string => {
+  let anyStyle = '';
   let desktopStyle = '';
   let mobileStyle = '';
   let tabletStyle = '';
+  if (a) {
+    anyStyle = `w-${a}/12`;
+  }
   if (d) {
     desktopStyle = `lg:w-${d}/12`;
   }
   if (m) {
-    mobileStyle = `md:w-${d}/6`;
+    mobileStyle = `w-${m}/6`;
   }
   if (t) {
-    tabletStyle = `w-${d}/4`;
+    tabletStyle = `md:w-${t}/4`;
   }
 
   return classNames(desktopStyle, mobileStyle, tabletStyle);
 };
 
-const Column: React.FC<Props> = ({ children, className, d, m, noGutter, t }) => (
-  <div className={classNames(className, generateColumnSize(d, t, m), { 'px-16': !noGutter })}>
+const Column: React.FC<Props> = ({ children, className, a, d, m, noGutter, t }) => (
+  <div
+    className={classNames(className, generateColumnSize(a, d, t, m), {
+      'px-16': !noGutter,
+      'pb-32': !noGutter,
+    })}
+  >
     {children}
   </div>
 );
