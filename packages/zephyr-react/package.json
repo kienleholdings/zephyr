@@ -1,6 +1,6 @@
 {
   "name": "@kienleholdings/zephyr-react",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React component library for Zephyr",
   "prettier": "@kienleholdings/prettier-config",
   "private": false,
