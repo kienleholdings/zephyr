@@ -10,6 +10,7 @@ const Loader: React.FC<Props> = ({ container, size = 'normal' }) => (
   <div
     className={classNames({
       flex: container,
+      'h-full': container,
       'p-32': container,
       'w-full': container,
       'justify-center': container,

@@ -7,7 +7,15 @@ interface Props {
 }
 
 const Grid: React.FC<Props> = ({ children, className, noGutter }) => (
-  <div className={classNames('flex flex-wrap', { '-mx-16': !noGutter }, className)}>{children}</div>
+  <div
+    className={classNames(
+      'flex flex-wrap',
+      { 'md:-mx-16': !noGutter, '-mx-8': !noGutter },
+      className
+    )}
+  >
+    {children}
+  </div>
 );
 
 export default Grid;
