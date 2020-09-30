@@ -1,17 +1,64 @@
-import tailwindSpinner from 'tailwindcss-spinner';
+interface ThemeColor {
+  darker: string;
+  lighter: string;
+  normal: string;
+}
 
-// TODO: Come up with a better variable system post 0.X
-// Re-used styles go up here
-const charcoal = {
-  dark: '#222222',
-  light: '#555555',
+interface DefaultColors {
+  dark: {
+    bg: ThemeColor;
+    fg: ThemeColor;
+  }
+  danger: ThemeColor;
+  light: {
+    bg: ThemeColor;
+    fg: ThemeColor;
+  }
+  primary: ThemeColor;
+  secondary: ThemeColor;
+  success: ThemeColor;
+}
+
+export const charcoal: ThemeColor = {
+  darker: '#222222',
+  lighter: '#555555',
   normal: '#333333',
+}
+
+export const sourApple: ThemeColor = {
+  darker: '#449E48',
+  lighter: '#82C785',
+  normal: '#4CAF50',
 };
 
-const tailwindConfig = {
-  plugins: [
-    tailwindSpinner(), // no options to configure
-  ],
+export const steam: ThemeColor = {
+  darker: '#E6E6E6#',
+  lighter: '#ffffff',
+  normal: '#ffffff',
+}
+
+export const tomato = {
+  darker: '#DC3C31',
+  lighter: '#F77B72',
+  normal: '#F44336'
+};
+
+export const defaultColors: DefaultColors = {
+  dark: {
+    bg: charcoal,
+    fg: steam
+  },
+  danger: tomato,
+  light: {
+    bg: steam,
+    fg: charcoal,
+  },
+  primary: charcoal,
+  secondary: steam,
+  success: sourApple
+}
+
+export const generateConfig = (colors = defaultColors, additionalOverrides = {}) => ({
   theme: {
     borderRadius: {
       none: '0',
@@ -25,20 +72,7 @@ const tailwindConfig = {
       '3':
         '0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)',
     },
-    colors: {
-      ash: {
-        dark: '#acacac',
-        normal: '#ededed',
-      },
-      danger: {
-        normal: '#f44336',
-      },
-      charcoal,
-      primary: charcoal,
-      steam: {
-        normal: '#ffffff',
-      },
-    },
+    colors,
     lineHeight: {
       body: '24px',
       'heading-giant': '88px',
@@ -63,6 +97,10 @@ const tailwindConfig = {
       bold: 700,
       normal: 400,
     },
+    screens: {
+      dark: { raw: '(prefers-color-scheme: dark)' },
+      light: { raw: '(prefers-color-scheme: light)' },
+    },
     spacing: {
       '8': '8px',
       '16': '16px',
@@ -77,21 +115,6 @@ const tailwindConfig = {
       '88': '88px',
       '96': '96px',
     },
-    // Todo: This should probably be better typed but not a big enough priority that I care
-    spinner: (theme: any): any => ({
-      normal: {
-        color: theme('colors.primary.normal'),
-        size: '64px', // size of the spinner (used for both width and height)
-        border: '8px', // border-width of the spinner (shouldn't be bigger than half the spinner's size)
-        speed: '1000ms',
-      },
-      small: {
-        color: theme('colors.primary.normal'),
-        size: '32px', // size of the spinner (used for both width and height)
-        border: '4px', // border-width of the spinner (shouldn't be bigger than half the spinner's size)
-        speed: '1000ms',
-      },
-    }),
     extend: {
       maxWidth: {
         'container-fluid': '100vw',
@@ -104,6 +127,7 @@ const tailwindConfig = {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     boxShadow: ['responsive', 'hover', 'focus', 'active'],
   },
-};
+  ...additionalOverrides,
+});
 
-export default tailwindConfig;
+export default generateConfig();

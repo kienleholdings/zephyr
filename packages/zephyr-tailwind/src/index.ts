@@ -1,3 +1,3 @@
-import tailwind from './tailwind';
+import * as tailwind from './tailwind';
 
-export default tailwind;
+export = tailwind;

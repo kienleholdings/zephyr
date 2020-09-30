@@ -28,9 +28,9 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@kienleholdings/prettier-config": "^0.1.1",
-    "lerna": "^3.21.0",
-    "markdownlint-cli": "^0.23.1",
-    "prettier": "^2.0.5"
+    "@kienleholdings/prettier-config": "^0.1.2",
+    "lerna": "^3.22.1",
+    "markdownlint-cli": "^0.23.2",
+    "prettier": "^2.1.2"
   }
 }
