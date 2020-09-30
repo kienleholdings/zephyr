@@ -5,19 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2020-09-29
+## [1.0.0] - 2020-09-30
 
 This is a major release. Users of 0.x will need to make the following updates
 
 - Remove and replace any instances of `spinner-normal` and `spinner-small` with [native TailwindCSS animations](https://tailwindcss.com/docs/animation#spin)
+- Update color names to new names built around light and dark mode
 
 ### Added
 
-- N / A
+- Dark Mode Support
 
 ### Changed
 
-- N / A
+- Completely overhauled color configuration. Fun color names have been replaced with more usable and customizable color names.
 
 ### Removed
 
