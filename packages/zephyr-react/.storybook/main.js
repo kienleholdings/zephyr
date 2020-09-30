@@ -5,7 +5,7 @@ module.exports = {
   stories: ['../src/**/*.stories.tsx'],
   webpackFinal: async (config) => {
     config.module.rules.push({
-      loader: 'awesome-typescript-loader',
+      loader: 'ts-loader',
       options: {
         transpileOnly: true,
       },

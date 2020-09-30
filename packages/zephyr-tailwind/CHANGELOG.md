@@ -19,6 +19,7 @@ This is a major release. Users of 0.x will need to make the following updates
 ### Changed
 
 - Completely overhauled color configuration. Fun color names have been replaced with more usable and customizable color names.
+- Replaced `light` and `dark` with `lighter` and `darker` to reduce developer confusion with light mode and dark mode
 
 ### Removed
 
