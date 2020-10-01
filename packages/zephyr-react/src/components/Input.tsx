@@ -43,11 +43,13 @@ const Input: React.FC<Props> = ({
   });
   return (
     <label className="block mb-32" htmlFor={name}>
-      <div className="font-body leading-body pb-8 text-body text-primary-normal">{label}</div>
+      <div className="font-body leading-body pb-8 text-body light:text-light-fg-normal dark:text-dark-fg-normal">
+        {label}
+      </div>
       <input
         autoComplete={autoComplete}
         className={classNames(
-          'border border-ash-normal bg-steam-normal h-56 placeholder-ash-dark px-24 py-16 rounded-partial shadow-1 w-full',
+          'border light:border-light-bg-darker light:bg-light-bg-normal light:text-light-fg-normal dark:border-dark-bg-darker dark:bg-dark-bg-normal dark:text-dark-fg-normal h-56 light:placeholder-light-fg-lighter  dark:placeholder-dark-fg-darker px-24 py-16 rounded-partial shadow-1 w-full',
           {
             'border-danger-normal': !input.valid && input.touched,
             'text-danger-normal': !input.valid && input.touched,

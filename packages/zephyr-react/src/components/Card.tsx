@@ -6,7 +6,12 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ children, className }) => (
-  <div className={classNames('bg-steam-normal shadow-2 rounded-partial', className)}>
+  <div
+    className={classNames(
+      'light:bg-light-bg-normal dark:bg-dark-bg-normal shadow-2 rounded-partial',
+      className
+    )}
+  >
     {children}
   </div>
 );

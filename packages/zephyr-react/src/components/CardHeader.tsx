@@ -9,8 +9,8 @@ interface Props {
 const CardHeader: React.FC<Props> = ({ children, className }) => (
   <div
     className={classNames(
-      'border-ash-normal border-b h-72 p-24',
-      utilities.generateTextStyles('heading-small', 'light', false),
+      'light:border-light-bg-lighter dark:border-dark-bg-lighter border-b h-72 p-24',
+      utilities.generateTextStyles('heading-small', 'responsive', false),
       className
     )}
   >

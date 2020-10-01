@@ -5,25 +5,28 @@ interface ThemeColor {
 }
 
 interface DefaultColors {
-  dark: {
-    bg: ThemeColor;
-    fg: ThemeColor;
-  }
+  // TailwindCSS doesn't allow for deeply nested colors, so adding a dash here is a workaround
+  'dark-bg': ThemeColor;
+  'dark-fg': ThemeColor;
   danger: ThemeColor;
-  light: {
-    bg: ThemeColor;
-    fg: ThemeColor;
-  }
+  'light-bg': ThemeColor;
+  'light-fg': ThemeColor;
   primary: ThemeColor;
   secondary: ThemeColor;
   success: ThemeColor;
 }
 
+export const blueRaspberry: ThemeColor = {
+  darker: '#1E88E5',
+  lighter: '#42A5F5',
+  normal: '#2196F3',
+};
+
 export const charcoal: ThemeColor = {
   darker: '#222222',
   lighter: '#555555',
   normal: '#333333',
-}
+};
 
 export const sourApple: ThemeColor = {
   darker: '#449E48',
@@ -35,28 +38,24 @@ export const steam: ThemeColor = {
   darker: '#E6E6E6#',
   lighter: '#ffffff',
   normal: '#ffffff',
-}
+};
 
 export const tomato = {
   darker: '#DC3C31',
   lighter: '#F77B72',
-  normal: '#F44336'
+  normal: '#F44336',
 };
 
 export const defaultColors: DefaultColors = {
-  dark: {
-    bg: charcoal,
-    fg: steam
-  },
+  'dark-bg': charcoal,
+  'dark-fg': steam,
   danger: tomato,
-  light: {
-    bg: steam,
-    fg: charcoal,
-  },
-  primary: charcoal,
+  'light-bg': steam,
+  'light-fg': charcoal,
+  primary: blueRaspberry,
   secondary: steam,
-  success: sourApple
-}
+  success: sourApple,
+};
 
 export const generateConfig = (colors = defaultColors, additionalOverrides = {}) => ({
   theme: {
@@ -97,10 +96,6 @@ export const generateConfig = (colors = defaultColors, additionalOverrides = {})
       bold: 700,
       normal: 400,
     },
-    screens: {
-      dark: { raw: '(prefers-color-scheme: dark)' },
-      light: { raw: '(prefers-color-scheme: light)' },
-    },
     spacing: {
       '8': '8px',
       '16': '16px',
@@ -120,6 +115,10 @@ export const generateConfig = (colors = defaultColors, additionalOverrides = {})
         'container-fluid': '100vw',
         'container-general': '1200px',
         'container-long-form': '600px',
+      },
+      screens: {
+        dark: { raw: '(prefers-color-scheme: dark)' },
+        light: { raw: '(prefers-color-scheme: light)' },
       },
     },
   },
