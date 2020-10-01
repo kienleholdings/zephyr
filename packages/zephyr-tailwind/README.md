@@ -4,7 +4,7 @@
 
 ## Installation
 
-1. Run `yarn add tailwindcss` (if you get peer dep errors, explicitly append the version `@^1.4.6`)
+1. Run `yarn add tailwindcss` (if you get peer dep errors, explicitly append the version `@^1.8.10`)
 1. Run `yarn add @kienleholdings/zephyr-tailwind`
 
 ## Setup
@@ -61,31 +61,34 @@ to go!
 
 ## Customization
 
-Customizing the default Zephyr Tailwind values is super easy, so easy in fact that it's basically
-the same process as the
-[official tailwind documentation](https://tailwindcss.com/docs/configuration). Work with examples
-better than boring documentation? Here's an example of us replacing our default charcoal color
-(`#333333`) with a super pretty green.
+By default Zephyr makes it easy to customize colors. Simply call the config function with a color object. Here's an example:
 
 ```javascript
 const zephyrTailwind = require('@kienleholdings/zephyr-tailwind');
 
-module.exports = {
-  ...zephyrTailwind.default,
-  theme: {
-    ...zephyrTailwind.default.theme,
-    colors: {
-      ...zephyrTailwind.default.theme.colors,
-      primary: {
-        dark: '#43A047',
-        light: '#66BB6A',
-        normal: '#4CAF50',
-      },
-    },
+const newColors = {
+  ...zephyrTailwind.defaultColors,
+  primary: {
+    lighter: '#FFA726',
+    normal: '#FF9800',
+    darker: '#FB8C00',
   },
 };
+
+module.exports = zephyrTailwind.generateConfig(newColors);
 ```
 
-Now at first glance there's a lot of object destructuring going on, that's something we plan to fix
-in the future for easier configuration, but unfortunately right now it's a piece of tech debt and
-not MVP.
+For more in-depth tailwind customization, you can pass a [TailwindCSS configuration object](https://tailwindcss.com/docs/configuration) as a second parameter
+
+```javascript
+const zephyrTailwind = require('@kienleholdings/zephyr-tailwind');
+
+// Put your color overrides here or set "newColors" below to undefined
+// (i.e. zephyrTailwind.generateConfig(undefined, {});
+
+const additionalConfiguration = {
+  // Put your Twilwind customizations here
+};
+
+module.exports = zephyrTailwind.generateConfig(newColors, additionalConfiguration);
+```

@@ -17,7 +17,7 @@ const Modal: React.FC<Props> = ({ close, children, open, title }) => {
     return <></>;
   }
   return (
-    <div className="bg-primary-normal absolute bg-opacity-75 bottom-0 items-center justify-center flex left-0 right-0 top-0 w-screen">
+    <div className="bg-dark-bg-darker absolute bg-opacity-75 bottom-0 items-center justify-center flex left-0 right-0 top-0 w-screen">
       <div className="max-w-container-long-form w-full">
         <Card className="w-full">
           <CardHeader className="flex">

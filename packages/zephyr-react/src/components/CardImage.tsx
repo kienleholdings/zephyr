@@ -8,7 +8,7 @@ interface Props {
 }
 
 const CardImage: React.FC<Props> = ({ alt, className, src }) => (
-  <img alt={alt} className={classNames('block w-full', className)} src={src} />
+  <img alt={alt} className={classNames('block w-full rounded-t-partial', className)} src={src} />
 );
 
 export default CardImage;

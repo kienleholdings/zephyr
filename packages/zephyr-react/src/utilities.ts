@@ -10,7 +10,7 @@ const generateTextStyles = (
     | 'heading-small'
     | 'link'
     | 'paragraph',
-  theme: 'light' | 'dark' = 'light',
+  theme: 'light' | 'dark' | 'responsive' = 'responsive',
   includeMargin = true
 ): string => {
   const COMMON_BODY = 'font-normal font-body leading-body text-body';
@@ -50,11 +50,14 @@ const generateTextStyles = (
   }
 
   switch (theme) {
+    case 'responsive':
+      textTheme = 'light:text-light-fg-normal dark:text-dark-fg-normal';
+      break;
     case 'light':
-      textTheme = 'text-charcoal-normal';
+      textTheme = 'text-light-fg-normal';
       break;
     case 'dark':
-      textTheme = 'text-steam-normal';
+      textTheme = 'text-dark-fg-normal';
       break;
     default:
       // eslint-disable-next-line no-console
@@ -102,12 +105,13 @@ const generateButtonStyles = (size: 'normal' | 'small', theme: 'primary' | 'seco
       themeStyles = `${generateTextStyles(
         'body',
         'dark'
-      )} bg-primary-normal active:bg-primary-dark hover:bg-primary-light`;
+      )} bg-primary-normal active:bg-primary-darker hover:bg-primary-lighter`;
       break;
     case 'secondary':
       themeStyles = `${generateTextStyles(
-        'body'
-      )} bg-steam-normal active:bg-ash-normal text-primary-normal hover:text-primary-light active:text-primary-dark`;
+        'body',
+        'light'
+      )} bg-secondary-normal active:bg-secondary-darker hover:bg-secondary-lighter`;
       break;
     default:
       // eslint-disable-next-line no-console
